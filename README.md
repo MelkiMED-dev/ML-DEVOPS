@@ -18,3 +18,14 @@
   - Évaluation sur données de test → métriques affichées
 
 ➡️ Captures d’écran disponibles dans `screenshots/`.
+
+## 🔹 Task 3 : Tests unitaires avec pytest
+
+### Étapes réalisées :
+- ✅ Utilisé le fichier existant `tests/test_model.py`
+- ✅ Corrigé l’erreur `ModuleNotFoundError: No module named 'src'` en ajoutant `src/__init__.py` et en lançant `python -m pytest tests/ -v`
+- ✅ Validé **6 tests unitaires significatifs** (initialisation, entraînement, prédiction, évaluation, sauvegarde, chargement, chargement des données)
+- ✅ Tous les tests passent localement → **6/6 réussis**
+
+📸 **Preuve visuelle** :  
+![task3_pytest_fixed.png](screenshots/task3_pytest_fixed.png)
