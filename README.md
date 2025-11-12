@@ -29,3 +29,14 @@
 
 📸 **Preuve visuelle** :  
 ![task3_pytest_fixed.png](screenshots/task3_pytest_fixed.png)
+
+## 🔹 Task 4: flake8
+
+### Objectif :
+Mettre en place un pipeline d’intégration continue (CI) qui :
+- Vérifie la conformité du code (`flake8`)
+
+### Étapes réalisées :
+- ✅ Créé `setup.cfg`
+  - Exécution de :
+    ```flake8 .```
