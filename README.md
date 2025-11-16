@@ -7,6 +7,9 @@
   - `src/train.py`
 - ✅ Structure conforme aux attentes : projet ML minimal, pas d’API web.
 
+📸 **Preuve visuelle** :  
+![3.png](screenshots/3.png)
+
 ## Task 2: Exécution locale
 - ✅ Créé un environnement virtuel avec `python -m venv .venv`
 - ✅ Installé les dépendances via `pip install -r requirements.txt`
@@ -19,6 +22,9 @@
 
 ➡️ Captures d’écran disponibles dans `screenshots/`.
 
+📸 **Preuve visuelle** :  
+![6.png](screenshots/6.png)
+
 ## 🔹 Task 3 : Tests unitaires avec pytest
 
 ### Étapes réalisées :
@@ -28,7 +34,7 @@
 - ✅ Tous les tests passent localement → **6/6 réussis**
 
 📸 **Preuve visuelle** :  
-![task3_pytest_fixed.png](screenshots/task3_pytest_fixed.png)
+![12.png](screenshots/12.png)
 
 ## 🔹 Task 4: flake8
 
@@ -40,6 +46,9 @@ Mettre en place un pipeline d’intégration continue (CI) qui :
 - ✅ Créé `setup.cfg`
   - Exécution de :
     ```flake8 .```
+
+📸 **Preuve visuelle** :  
+![17.png](screenshots/17.png)
 
 ## 🔹 Task 5 : GitHub Actions CI workflow
 
@@ -56,4 +65,18 @@ Mettre en place un pipeline d’intégration continue (CI) qui :
 - ✅ Le workflow est activé sur `push` et `pull_request`
 
 📸 **Preuve visuelle** :  
-![task5_github_actions.png](screenshots/task5_github_actions.png)
+![19.png](screenshots/19.png)
+
+## 🔹 Task 6 : Conteneurisation avec Docker
+
+### Étapes réalisées :
+- ✅ Créé `Dockerfile` à la racine (respect des conventions : `Dockerfile`, pas d’extension)
+- ✅ Utilisé une image de base légère (`python:3.11-slim`)
+- ✅ Optimisé le cache Docker (copie de `requirements.txt` avant le code)
+- ✅ Installé les dépendances avec `--no-cache-dir` (bonne pratique)
+- ✅ Copié `src/` et `tests/` dans le conteneur
+- ✅ Construit l’image localement avec `docker build -t ml-devops-app .`
+- ✅ Testé avec `docker run ml-devops-app` → succès
+
+📸 **Preuve visuelle** :  
+![24.png](screenshots/24.png)

@@ -11,5 +11,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY src/ src/
 COPY tests/ tests/
 
-# Pas de CMD nécessaire pour le build — on veut juste que l’image se construise
+# ✅ Garantir que models/ existe DANS LE CONTENEUR
+# Même s'il est vide localement, on le crée explicitement
+RUN mkdir -p models
+
+# Optionnel : copier un modèle pré-entraîné (si présent)
+COPY models/ models/
+
+# CMD neutre → image prête pour build/test
 CMD ["echo", "✅ Docker image built successfully!"]
