@@ -15,8 +15,5 @@ COPY tests/ tests/
 # Même s'il est vide localement, on le crée explicitement
 RUN mkdir -p models
 
-# Optionnel : copier un modèle pré-entraîné (si présent)
-COPY models/ models/
-
 # CMD neutre → image prête pour build/test
 CMD ["echo", "✅ Docker image built successfully!"]
