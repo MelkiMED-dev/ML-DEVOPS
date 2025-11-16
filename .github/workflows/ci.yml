@@ -9,7 +9,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -26,10 +25,14 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run linter (flake8)
+      env:
+        PYTHONPATH: ${{ github.workspace }}
       run: |
         flake8 .
 
     - name: Run tests and collect results
+      env:
+        PYTHONPATH: ${{ github.workspace }}
       run: |
         pytest tests/ -v --junitxml=junit.xml
 
@@ -44,11 +47,12 @@ jobs:
         docker build -t ml-devops-app .
 
     - name: Save Docker image as artifact
+      if: success()
       run: |
         docker save -o ml-devops-app.tar ml-devops-app
-      if: success()
 
     - name: Upload Docker image artifact
+      if: success()
       uses: actions/upload-artifact@v4
       with:
         name: docker-image
