@@ -40,3 +40,20 @@ Mettre en place un pipeline d’intégration continue (CI) qui :
 - ✅ Créé `setup.cfg`
   - Exécution de :
     ```flake8 .```
+
+## 🔹 Task 5 : GitHub Actions CI workflow
+
+### Étapes réalisées :
+- ✅ Créé `.github/workflows/ci.yml`
+- ✅ Configuré le workflow pour :
+  - Checkout du code
+  - Setup Python 3.11
+  - Installation des dépendances
+  - Exécution de `flake8` (linting)
+  - Exécution de `pytest` avec génération de `junit.xml`
+  - Construction d’une image Docker (`ml-devops-app`)
+  - Sauvegarde de l’image Docker en `.tar` comme artefact
+- ✅ Le workflow est activé sur `push` et `pull_request`
+
+📸 **Preuve visuelle** :  
+![task5_github_actions.png](screenshots/task5_github_actions.png)
