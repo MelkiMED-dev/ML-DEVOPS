@@ -11,8 +11,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY src/ src/
 COPY tests/ tests/
 
-# copier un modèle pré-entraîné (si présent)
-COPY models/ models/
+# Garantir que models/ existe DANS LE CONTENEUR
+RUN mkdir -p models
 
 # CMD neutre → image prête pour build/test
 CMD ["echo", "✅ Docker image built successfully!"]
